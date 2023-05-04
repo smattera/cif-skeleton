@@ -6,7 +6,7 @@
   import "@skeletonlabs/skeleton/styles/all.css";
   // Most of your app wide CSS should be put in this file
   import "../app.postcss";
-  import { AppShell, AppBar, LightSwitch } from "@skeletonlabs/skeleton";
+  import { AppShell, AppBar } from "@skeletonlabs/skeleton";
   import Navigation from "$lib/Navigation/Navigation.svelte";
   import { Drawer, drawerStore } from "@skeletonlabs/skeleton";
   import Icons from "$lib/Icons/Icons.svelte";
