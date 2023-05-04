@@ -30,7 +30,7 @@
   <Navigation />
 </Drawer>
 <!-- App Shell -->
-<AppShell slotsidebarleft="bg-surface-200/5 w-0 lg:w-64">
+<AppShell slotSidebarLeft="bg-surface-200/5 w-0 lg:w-64">
   <svelte:fragment slot="sidebarLeft">
     <Navigation />
   </svelte:fragment>
