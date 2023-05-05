@@ -21,7 +21,7 @@
   <h2 class="p-4 uppercase font-bold">
     <img
       src="/logos/icon.webp"
-      class="h-10 w-auto inline-block pr-3"
+      class="h-10 w-auto inline-block pr-0 md:pr-3"
       style="vertical-align:middle"
       alt="Choctaw Indian Fair"
     />Choctaw Indian Fair
