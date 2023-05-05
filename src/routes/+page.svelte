@@ -2,9 +2,13 @@
 	import Countdown from "../components/Countdown.svelte";
 
   let videos = [
-    "vid/Promo.mp4",
-    "vid/CIFVideoWeb02.mp4",
-    "vid/CIFVideoWeb03.mp4",
+    "vid/video01.mp4",
+    "vid/video02.mp4",
+    "vid/video03.mp4",
+    "vid/video04.mp4",
+    "vid/video05.mp4",
+    "vid/video06.mp4",
+    "vid/video07.mp4",
   ];
   let currentVideo = 0;
 
@@ -18,8 +22,8 @@
 	<title>Choctaw Indian Fair | Home</title>
 </svelte:head>
 
-<video autoplay muted loop playsinline id="bgvid" on:ended={nextVideo} class="relative top-0 left-0 w-full object-cover -z-[1] h-[75vh]">
-  <source src="{videos[0]}" type="video/mp4">
+<video autoplay muted playsinline class="relative top-0 left-0 w-full object-cover -z-[1] h-[75vh]">
+  <source src="vid/CIFVideoWeb.mp4" type="video/mp4">
 </video>
 
 <!-- <video autoplay loop muted playsinline class="relative top-0 left-0 w-full object-cover -z-[1] h-[75vh]" poster="./img/CIF-bg.webp">
