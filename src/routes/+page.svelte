@@ -18,7 +18,7 @@
 	<title>Choctaw Indian Fair | Home</title>
 </svelte:head>
 
-<video autoplay muted loop id="bgvid" on:ended={nextVideo} class="relative top-0 left-0 w-full object-cover -z-[1] h-[75vh]">
+<video autoplay muted loop playsinline id="bgvid" on:ended={nextVideo} class="relative top-0 left-0 w-full object-cover -z-[1] h-[75vh]">
   <source src="{videos[0]}" type="video/mp4">
 </video>
 
