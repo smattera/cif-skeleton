@@ -2,13 +2,13 @@
 	import Countdown from "../components/Countdown.svelte";
 
   let videos = [
-    "vid/Princess.webm",
-    "vid/Princess.webm",
-    "vid/Princess.webm",
-    "vid/Princess.webm",
-    "vid/Princess.webm",
-    "vid/Princess.webm",
-    "vid/Princess.webm",
+    "vid/Princess.mp4",
+    "vid/Princess.mp4",
+    "vid/Princess.mp4",
+    "vid/Princess.mp4",
+    "vid/Princess.mp4",
+    "vid/Princess.mp4",
+    "vid/Princess.mp4",
   ];
   let currentVideo = 0;
 
@@ -23,7 +23,7 @@
 </svelte:head>
 
 <video autoplay muted playsinline id="bgvid" on:ended={nextVideo} class="relative top-0 left-0 w-full object-cover -z-[1] h-[75vh]">
-  <source src="{videos[0]}" type="video/webm">
+  <source src="{videos[0]}" type="video/mp4">
 </video>
 
 <!-- <video autoplay loop muted playsinline class="relative top-0 left-0 w-full object-cover -z-[1] h-[75vh]" poster="./img/CIF-bg.webp">
