@@ -9,7 +9,7 @@ a:not(.unstyled):not(.permalink):is(:not(.prose *)):not(.btn):not(
     .btn-icon
   ):not(.app-bar a):not(.logo-item):not(a.card):not(.list-nav a) {
   --tw-text-opacity: 1;
-  color: rgb(var(--color-primary-700) / var(--tw-text-opacity));
+  color: rgb(var(--color-success-700) / var(--tw-text-opacity));
   text-decoration-line: underline;
 }
 
@@ -29,7 +29,7 @@ a:not(.unstyled):not(.permalink):is(:not(.prose *)):not(.btn):not(
       ):not(.app-bar a):not(.logo-item):not(a.card):not(.list-nav a)
   ) {
   --tw-text-opacity: 1;
-  color: rgb(var(--color-primary-500) / var(--tw-text-opacity));
+  color: rgb(var(--color-success-500) / var(--tw-text-opacity));
 }
 
 .permalink {
@@ -79,4 +79,10 @@ h6:hover .permalink {
   margin-left: auto;
   margin-right: auto;
 }
-
+.list-nav a:hover, .list-nav button:hover, .list-option:hover {
+background-color: rgb(var(--color-success-500) / 0.1)!important;
+}
+:is(.dark a:not(.unstyled):not(.permalink):is(:not(.prose *)):not(.btn):not(.btn-icon):not(.app-bar a):not(.logo-item):not(a.card):not( .list-nav a )) {
+--tw-text-opacity: 1;
+color: rgb(var(--color-success-50) / var(--tw-text-opacity))!important;
+}

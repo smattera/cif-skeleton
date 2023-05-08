@@ -26,17 +26,13 @@
   <source src="{videos[0]}" type="video/mp4">
 </video>
 
-<!-- <video autoplay loop muted playsinline class="relative top-0 left-0 w-full object-cover -z-[1] h-[75vh]" poster="./img/CIF-bg.webp">
-	<source src="./vid/CIFVideoWeb.mp4" type="video/mp4"/>
-</video> -->
-
 <Countdown />
 
-<section class="flex flex-col md:flex-row items-center py-12 px-4">
-  <div class="md:w-1/2 md:pr-8 max-w-5xl mx-auto">
-    <img src="/img/chiefprincess.webp" alt="Chief & Princess" class="rounded-lg shadow-lg"/>
+<section class="flex flex-col lg:flex-row items-center py-12 px-4">
+  <div class="lg:w-1/2 lg:pr-8 max-w-5xl mx-auto">
+    <img src="/img/chiefprincess.webp" alt="Chief & Princess" class="rounded-lg shadow-lg outline outline-white outline-offset-4"/>
   </div>
-  <div class="md:w-1/2 text-center pt-10 md:pt-0">
+  <div class="lg:w-1/2 text-center pt-10 lg:pt-0">
 		<h1><span class="gradient-heading">Halito!</span></h1>
     <p class="my-2">
       Greetings from the Choctaw Indian Reservation. We invite you to join us July 12-15 for our 73rd annual Choctaw Indian Fair. The fair takes place on our centuries-old homeland in beautiful Choctaw, Mississippi. We gather each July to celebrate our heritage and share our beautiful and vibrant culture with our friends and neighbors. This year's fair theme is:
@@ -57,11 +53,6 @@
 	h1 .gradient-heading {
     font-size: clamp(3rem, 5vw, 6rem);
 		font-weight: 600;
-		@apply bg-clip-text text-transparent box-decoration-clone;
-		/* Direction */
-		@apply bg-gradient-to-br;
-		/* Color Stops */
-		@apply from-primary-500 via-surface-50 to-primary-600;
 	}
   h2 {
 		font-size: clamp(1rem, 5vw, 3rem);

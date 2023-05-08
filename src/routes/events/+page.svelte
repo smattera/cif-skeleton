@@ -10,8 +10,9 @@
 	<img src="/img/event-banner.webp" alt="Events" class="hidden lg:inline-block p-4" />
 	<img src="/img/event-banner02.webp" alt="Events" class="lg:hidden p-4" />
 
+	<h1 class="font-bold text-center pb-20">2023 Schedule Coming Soon!</h1>
   
-	<div class="tab-group space-y-4 flex flex-col" data-testid="tab-group">
+	<!--<div class="tab-group space-y-4 flex flex-col" data-testid="tab-group">
 		<div
 			class="tab-list flex justify-center"
 			role="tablist"
@@ -286,7 +287,7 @@
 		rounded="rounded-lg"
 		border=""
 	>
-		<!-- TODO: Fix TabGroup spacing on mobile -->
+
 		{#each fairDates as date}
 			<Tab bind:group={tabSet} name="tab{date.num}" value={date.tab}>
 				<span class="text-2xl">{date.day}</span><br />
@@ -647,7 +648,7 @@
 				</div>
 			{/if}
 		</svelte:fragment>
-	</TabGroup>
+	</TabGroup>-->
 </section>
 
 <style>

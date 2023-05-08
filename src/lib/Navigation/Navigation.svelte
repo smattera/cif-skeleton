@@ -43,7 +43,7 @@
 	<ul>
 		{#each pages as page}
 		<li>
-			<a on:click={drawerClose} href={page.href} class:bg-primary-active-token={currentRoute == page.href}>
+			<a on:click={drawerClose} href={page.href} class:bg-success-active-token={currentRoute == page.href}>
 				{#if page.icon}
 				<svg viewBox={page.viewBox} fill="currentColor">
 					<use xlink:href="#icon-{page.icon}"></use>

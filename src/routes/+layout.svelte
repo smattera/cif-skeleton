@@ -10,6 +10,7 @@
   import Navigation from "$lib/Navigation/Navigation.svelte";
   import { Drawer, drawerStore } from "@skeletonlabs/skeleton";
   import Icons from "$lib/Icons/Icons.svelte";
+	import Footer from "../components/Footer.svelte";
 
   function drawerOpen(): void {
     drawerStore.open({});
@@ -61,10 +62,10 @@
           style="vertical-align:middle"
           alt="Choctaw Indian Fair"
         />
-        <span class="hidden lg:inline-block">Choctaw Indian Fair</span>
+        <span class="hidden lg:inline-block" style="text-shadow: 0px 0px 10px #aaa">Choctaw Indian Fair</span>
       </strong>
       <svelte:fragment slot="trail">
-        <a class="btn variant-filled-primary" href="/">
+        <a class="btn variant-filled-success" href="/">
           <svg viewBox="0 96 960 960" fill="currentColor" class="buy-tickets">
             <use xlink:href="#icon-ticket" />
           </svg>
@@ -72,6 +73,9 @@
         </a>
       </svelte:fragment>
     </AppBar>
+  </svelte:fragment>
+  <svelte:fragment slot="pageFooter">
+    <Footer />
   </svelte:fragment>
   <!-- Page Route Content -->
   <slot />

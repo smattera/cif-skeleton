@@ -44,31 +44,31 @@
 {#if timeLeft > 0}
 <section class="flex flex-col md:flex-row items-center py-8 px-4">
   <div class="text-center md:w-1/2 md:text-right md:pr-3">
-    <h3 class="uppercase" style="text-shadow: 0px 0px 10px #aaa;font-size:1.6rem">
-      Countdown to the <span class="whitespace-nowrap">73rd Choctaw Indian Fair:</span>
+    <h3 style="text-shadow: 0px 0px 10px #aaa;font-size:1.6rem">
+      Countdown to the <span class="whitespace-nowrap uppercase" style="font-weight:700;">Choctaw Indian Fair:</span>
     </h3>
   </div>
   <div class="text-center pt-5 md:w-1/2 md:pt-0">
 		<div class="grid grid-flow-col gap-5 text-center auto-cols-max justify-center md:justify-start md:pl-3">
-      <div class="flex flex-col p-2 card variant-filled-primary rounded-box drop-shadow-2xl">
+      <div class="flex flex-col p-2 card variant-filled-success rounded-box drop-shadow-2xl">
         <span class="countdown font-mono text-5xl block">
           {countdownTime.days}
         </span>
         days
       </div>
-      <div class="flex flex-col p-2 card variant-filled-primary rounded-box drop-shadow-2xl">
+      <div class="flex flex-col p-2 card variant-filled-success rounded-box drop-shadow-2xl">
         <span class="countdown font-mono text-5xl block">
           {countdownTime.hours}
         </span>
         hours
       </div>
-      <div class="flex flex-col p-2 card variant-filled-primary rounded-box drop-shadow-2xl">
+      <div class="flex flex-col p-2 card variant-filled-success rounded-box drop-shadow-2xl">
         <span class="countdown font-mono text-5xl block">
           {countdownTime.minutes}
         </span>
         min
       </div>
-      <div class="flex flex-col p-2 card variant-filled-primary rounded-box drop-shadow-2xl">
+      <div class="flex flex-col p-2 card variant-filled-success rounded-box drop-shadow-2xl">
         <span class="countdown font-mono text-5xl block">
           {countdownTime.seconds}
         </span>
