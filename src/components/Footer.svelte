@@ -19,7 +19,7 @@
 
 <Sponsors />
 
-<footer>
+<footer class="text-center">
   <img src="./logos/icon.webp" alt="Choctaw Indian Fair" class="h-24 w-auto">
   <p class="font-bold uppercase text-xl" style="text-shadow: 0px 0px 10px #aaa">
     Choctaw Indian Fair
