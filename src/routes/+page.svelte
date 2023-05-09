@@ -5,6 +5,10 @@
     "vid/OpeningCeremonies.mp4",
     "vid/Princess.mp4",
     "vid/Stickball.mp4",
+    "vid/Dancegrounds.mp4",
+    "vid/RezRun.mp4",
+    "vid/IronWarrior.mp4",
+    "vid/Midway.mp4",
   ];
   let currentVideo = 0;
 
