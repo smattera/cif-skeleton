@@ -2,12 +2,7 @@
 	import Countdown from "../components/Countdown.svelte";
 
   let videos = [
-    "vid/Princess.mp4",
-    "vid/Princess.mp4",
-    "vid/Princess.mp4",
-    "vid/Princess.mp4",
-    "vid/Princess.mp4",
-    "vid/Princess.mp4",
+    "vid/OpeningCeremonies.mp4",
     "vid/Princess.mp4",
   ];
   let currentVideo = 0;
