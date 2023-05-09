@@ -4,6 +4,7 @@
   let videos = [
     "vid/OpeningCeremonies.mp4",
     "vid/Princess.mp4",
+    "vid/Stickball.mp4",
   ];
   let currentVideo = 0;
 
@@ -41,6 +42,9 @@
 </section>
 
 <style>
+  video {
+    background-color: black;
+  }
 	section {
     background: center / cover url('/isometric.svg'), linear-gradient(to bottom right, red, maroon);
 		background-blend-mode: darken;
