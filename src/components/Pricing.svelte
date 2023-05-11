@@ -1,5 +1,5 @@
 <div class="hero px-4 md:px-0">
-  <h1 class="text-2xl font-bold uppercase mb-4 text-center">Ticket Presale Starts On Monday, June 12, 2023</h1>
+  <h2 class="font-bold mb-4 text-center">Ticket Presale Starts On Monday, June 12, 2023</h2>
   <div class="flex flex-col lg:flex-row justify-center items-center w-full h-full text-center">
     <div class="bg-child rounded-md shadow-lg p-6 m-4 w-full h-full outline outline-white outline-offset-4">
       <h2 class="text-5xl font-bold" style="text-shadow:5px 5px 10px #333">Child Pass</h2>
@@ -35,8 +35,15 @@
     #212529;
     background-blend-mode: lighten;
   }
-  .hero h1 {
-    text-shadow: 0px 0px 10px #aaa;
+  .hero h2 {
+    text-shadow: 0px 0px 8px #aaa;
+  }
+  .hero div div h2 {
+    font-size: clamp(2rem, 5vw, 3rem);
+		font-weight: 600;
+  }
+  .hero div div div {
+    font-size: clamp(1rem, 5vw, 2rem);
   }
   .bg-child {
 		background: linear-gradient(midnightblue, purple, lightpink);

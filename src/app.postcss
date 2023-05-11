@@ -5,71 +5,6 @@ body {
   @apply h-full overflow-hidden;
 }
 
-a:not(.unstyled):not(.permalink):is(:not(.prose *)):not(.btn):not(
-    .btn-icon
-  ):not(.app-bar a):not(.logo-item):not(a.card):not(.list-nav a) {
-  --tw-text-opacity: 1;
-  color: rgb(var(--color-success-700) / var(--tw-text-opacity));
-  text-decoration-line: underline;
-}
-
-a:not(.unstyled):not(.permalink):is(:not(.prose *)):not(.btn):not(
-    .btn-icon
-  ):not(.app-bar a):not(.logo-item):not(a.card):not(.list-nav a):hover {
-  --tw-brightness: brightness(1.1);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast)
-    var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate)
-    var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-:is(
-    .dark
-      a:not(.unstyled):not(.permalink):is(:not(.prose *)):not(.btn):not(
-        .btn-icon
-      ):not(.app-bar a):not(.logo-item):not(a.card):not(.list-nav a)
-  ) {
-  --tw-text-opacity: 1;
-  color: rgb(var(--color-success-500) / var(--tw-text-opacity));
-}
-
-.permalink {
-  visibility: hidden;
-  display: inline-block;
-  width: 0px;
-  --tw-translate-y: -0.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
-    rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y))
-    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  padding-left: 0.5rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-h1:hover .permalink,
-h2:hover .permalink,
-h3:hover .permalink,
-h4:hover .permalink,
-h5:hover .permalink,
-h6:hover .permalink {
-  visibility: visible;
-  width: auto;
-}
-
-.tabgroup {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.tab {
-  flex-basis: 100%;
-}
-
-@media (min-width: 640px) {
-  .tab {
-    flex-basis: auto;
-  }
-}
-
 .app-bar {
   background: url("/rope.svg") center repeat-x;
   background-size: auto;
@@ -79,9 +14,7 @@ h6:hover .permalink {
   margin-left: auto;
   margin-right: auto;
 }
-.list-nav a:hover, .list-nav button:hover, .list-option:hover {
-background-color: rgb(var(--color-success-500) / 0.1)!important;
-}
+
 :is(.dark a:not(.unstyled):not(.permalink):is(:not(.prose *)):not(.btn):not(.btn-icon):not(.app-bar a):not(.logo-item):not(a.card):not( .list-nav a )) {
 --tw-text-opacity: 1;
 color: rgb(var(--color-success-50) / var(--tw-text-opacity))!important;

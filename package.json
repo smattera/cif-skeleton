@@ -41,6 +41,8 @@
   },
   "type": "module",
   "dependencies": {
-    "@sveltejs/adapter-vercel": "^2.4.3"
+    "@sveltejs/adapter-vercel": "^2.4.3",
+    "fuse.js": "^6.6.2",
+    "materialize-css": "^1.0.0"
   }
 }
