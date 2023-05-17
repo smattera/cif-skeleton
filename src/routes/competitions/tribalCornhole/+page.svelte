@@ -9,8 +9,8 @@
 <svelte:head>
   <meta property="og:title" content="Open Cornhole Tournament" />
   <meta property="og:description" content="Friday, July 14, 2023 ⬦ Starts at 10:00 AM ⬦ Open to Tribal Affiliates" />
-  <meta property="og:image" content="https://www.choctawindianfair.com/assets/img/meta/tribalCornhole.jpeg" />
-  <meta property="og:url" content="https://www.choctawindianfair.com/competitions/tribalCornhole.html" />
+  <meta property="og:image" content="https://cif-skeleton.vercel.app/meta/tribalCornhole.jpeg" />
+  <meta property="og:url" content="https://www.choctawindianfair.com/competitions/tribalCornhole" />
   <meta property="og:type" content="website" />
 </svelte:head>
 
