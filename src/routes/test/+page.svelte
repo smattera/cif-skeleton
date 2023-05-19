@@ -1,75 +1,139 @@
-<script>
-	import { readable } from 'svelte/store';
-  import { Render, Subscribe, createTable } from 'svelte-headless-table';
-  import { addSortBy, addColumnFilters } from 'svelte-headless-table/plugins';
+<script lang="ts">
+	import { writable } from 'svelte/store';
+	import { createSvelteTable, flexRender, getCoreRowModel } from '@tanstack/svelte-table';
+	import type { ColumnDef, TableOptions } from '@tanstack/table-core/src/types';
 
-  const data = readable([
-    { time: "6:00 PM", category: "Stickball", title: "Opening Ceremonies, Fallen Tushka Ceremony, & Happy Feet Social Dancers" },
-    { time: "7:00 PM", category: "Stickball", title: "Alla Tik Tóli (14-17) Exhibition Game" },
-    { time: "8:00 PM", category: "Stickball", title: "Legends: Men's (50+) Exhibition Game: North VS South" },
-    { time: "9:00 PM", category: "Stickball", title: "Women's (35+) Exhibition Game: North VS South" },
-    { time: "10:00 PM", category: "Stickball", title: "Men's Division: Game 1" },
-  ]);
+	type Person = {
+		firstName: string;
+		lastName: string;
+		age: number;
+		visits: number;
+		status: string;
+		progress: number;
+	};
 
-  const table = createTable(data, {
-    sort: addSortBy(),
-    filter: addColumnFilters(),
-  });
+	const defaultData: Person[] = [
+		{
+			firstName: 'tanner',
+			lastName: 'linsley',
+			age: 24,
+			visits: 100,
+			status: 'In Relationship',
+			progress: 50
+		},
+		{
+			firstName: 'tandy',
+			lastName: 'miller',
+			age: 40,
+			visits: 40,
+			status: 'Single',
+			progress: 80
+		},
+		{
+			firstName: 'joe',
+			lastName: 'dirte',
+			age: 45,
+			visits: 20,
+			status: 'Complicated',
+			progress: 10
+		}
+	];
 
-  const columns = table.createColumns([
-    table.column({
-      header: 'Time',
-      accessor: 'time',
-    }),
-    table.column({
-      header: 'Category',
-      accessor: 'category',
-    }),
-    table.column({
-      header: 'Title',
-      accessor: 'title',
-    })
-  ]);
+	const defaultColumns: ColumnDef<Person>[] = [
+		{
+			accessorKey: 'firstName',
+			cell: (info) => info.getValue(),
+			footer: (info) => info.column.id
+		},
+		{
+			accessorFn: (row) => row.lastName,
+			id: 'lastName',
+			cell: (info) => info.getValue(),
+			header: () => 'Last Name',
+			footer: (info) => info.column.id
+		},
+		{
+			accessorKey: 'age',
+			header: () => 'Age',
+			footer: (info) => info.column.id
+		},
+		{
+			accessorKey: 'visits',
+			header: () => 'Visits',
+			footer: (info) => info.column.id
+		},
+		{
+			accessorKey: 'status',
+			header: 'Status',
+			footer: (info) => info.column.id
+		},
+		{
+			accessorKey: 'progress',
+			header: 'Profile Progress',
+			footer: (info) => info.column.id
+		}
+	];
 
-  const {
-    headerRows,
-    rows,
-    tableAttrs,
-    tableBodyAttrs,
-  } = table.createViewModel(columns);
+	const options = writable<TableOptions<Person>>({
+		data: defaultData,
+		columns: defaultColumns,
+		getCoreRowModel: getCoreRowModel()
+	});
 
+	const rerender = () => {
+		options.update((options) => ({
+			...options,
+			data: defaultData
+		}));
+	};
 
+	const table = createSvelteTable(options);
 </script>
 
-<table {...$tableAttrs}>
-  <thead>
-    {#each $headerRows as headerRow (headerRow.id)}
-    <Subscribe rowAttrs={headerRow.attrs()} let:rowAttrs>
-      <tr {...rowAttrs}>
-        {#each headerRow.cells as cell (cell.id)}
-          <Subscribe attrs={cell.attrs()} let:attrs>
-            <th {...attrs}>
-              <Render of={cell.render()} />
-            </th>
-          </Subscribe>
-        {/each}
-      </tr>
-    </Subscribe>
-    {/each}
-  </thead>
-  <tbody {...$tableBodyAttrs}>
-    {#each $rows as row (row.id)}
-      <Subscribe rowAttrs={row.attrs()} let:rowAttrs>
-        <tr {...rowAttrs}>
-          {#each row.cells as cell (cell.id)}
-            <Subscribe attrs={cell.attrs()} let:attrs>
-              <td {...attrs}>
-                <Render of={cell.render()} />
-              </td>
-            </Subscribe>
-          {/each}
-        </tr>
-      </Subscribe>
-    {/each}
-  </tbody>
-</table>
+<div class="p-2">
+	<table>
+		<thead>
+			{#each $table.getHeaderGroups() as headerGroup}
+				<tr>
+					{#each headerGroup.headers as header}
+						<th>
+							{#if !header.isPlaceholder}
+								<svelte:component
+									this={flexRender(header.column.columnDef.header, header.getContext())}
+								/>
+							{/if}
+						</th>
+					{/each}
+				</tr>
+			{/each}
+		</thead>
+		<tbody>
+			{#each $table.getRowModel().rows as row}
+				<tr>
+					{#each row.getVisibleCells() as cell}
+						<td>
+							<svelte:component this={flexRender(cell.column.columnDef.cell, cell.getContext())} />
+						</td>
+					{/each}
+				</tr>
+			{/each}
+		</tbody>
+		<tfoot>
+			{#each $table.getFooterGroups() as footerGroup}
+				<tr>
+					{#each footerGroup.headers as header}
+						<th>
+							{#if !header.isPlaceholder}
+								<svelte:component
+									this={flexRender(header.column.columnDef.footer, header.getContext())}
+								/>
+							{/if}
+						</th>
+					{/each}
+				</tr>
+			{/each}
+		</tfoot>
+	</table>
+	<div class="h-4" />
+	<button on:click={() => rerender()} class="border p-2"> Rerender </button>
+</div>
