@@ -20,6 +20,7 @@
     "@sveltejs/kit": "^1.5.0",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
+    "@types/mapbox-gl": "^2.7.11",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
     "@typescript-eslint/parser": "^5.45.0",
     "autoprefixer": "^10.4.14",
@@ -42,7 +43,7 @@
   "type": "module",
   "dependencies": {
     "@sveltejs/adapter-vercel": "^2.4.3",
-    "@tanstack/svelte-table": "^8.9.1",
+    "mapbox-gl": "^2.14.1",
     "materialize-css": "^1.0.0"
   }
 }

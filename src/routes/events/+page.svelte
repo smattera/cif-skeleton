@@ -10,7 +10,7 @@
 	<img src="/img/event-banner.webp" alt="Events" class="hidden lg:inline-block p-4" />
 	<img src="/img/event-banner02.webp" alt="Events" class="lg:hidden p-4" />
 
-	<h1 class="font-bold text-center pb-20">2023 Schedule Coming Soon!</h1>
+	<h1 class="font-bold text-center pb-20">2023 Events Coming Soon!</h1>
   
 	<!--<div class="tab-group space-y-4 flex flex-col" data-testid="tab-group">
 		<div
