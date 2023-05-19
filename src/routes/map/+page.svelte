@@ -1,14 +1,19 @@
 <script>
-	import Map from './Map.svelte';
-	import MapMarker from './MapMarker.svelte';
+  import { Map, Marker } from '@beyonk/svelte-mapbox'
+
+  let mapComponent
+
+	function onReady() {
+    mapComponent.flyTo({center:[40.7127281,-74.0060152]}) 
+	}
 </script>
+
 <div class="relative top-0 left-0 w-full object-cover -z-[1] h-[75vh]">
-  <Map lat={35} lon={-84} zoom={3.5}>
-    <MapMarker lat={37.8225} lon={-122.0024} label="Svelte Body Shaping"/>
-    <MapMarker lat={33.8981} lon={-118.4169} label="Svelte Barbershop & Essentials"/>
-    <MapMarker lat={29.7230} lon={-95.4189} label="Svelte Waxing Studio"/>
-    <MapMarker lat={28.3378} lon={-81.3966} label="Svelte 30 Nutritional Consultants"/>
-    <MapMarker lat={40.6483} lon={-74.0237} label="Svelte Brands LLC"/>
-    <MapMarker lat={40.6986} lon={-74.4100} label="Svelte Medical Systems"/>
-  </Map>
+<Map accessToken="PUBLIC_MAPBOX_TOKEN"
+	style="mapbox://styles/mapbox/outdoors-v11"
+  bind:this={mapComponent} 
+  on:ready={onReady}
+>
+	 <Marker lat=-74.0060152 lng=40.7127281 label="NYC" />
+</Map>
 </div>
